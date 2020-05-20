@@ -46,6 +46,9 @@ class Playlist:
     def __getitem__(self, item):
         return self._programas[item]
 
+    def __len__(self):
+        return len(self._programas)
+
 
 vingadores = Filme('vigadores - guerra infinita', 2018, 160)
 vingadores.dar_likes()
