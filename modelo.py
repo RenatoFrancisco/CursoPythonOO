@@ -38,6 +38,14 @@ class Serie(Programa):
     def __str__(self):
         return f'Nome: {self.nome} - Ano: {self.ano} - Temporadas: {self.temporadas} - Likes: {self.likes}'
 
+class Playlist:
+    def __init__(self, nome, programas):
+        self.nome = nome
+        self.programas = programas
+
+    def tamanho(self):
+        return len(self.programas)
+
 vingadores = Filme('vigadores - guerra infinita', 2018, 160)
 vingadores.dar_likes()
 
@@ -45,6 +53,11 @@ atlanta = Serie('atlanta', 2018, 2)
 atlanta.dar_likes()
 atlanta.dar_likes()
 
-programas = [vingadores, atlanta]
-for programa in programas:
+tmep = Filme('todo mundo em pânico', 1999, 100)
+demolidor = Serie('demolidro', 2016, 2)
+
+programas = [vingadores, atlanta, demolidor, tmep]
+playlist = Playlist('fim de semana', programas)
+
+for programa in playlist.programas:
     print(programa)
